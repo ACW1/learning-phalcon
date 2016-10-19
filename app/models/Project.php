@@ -1,6 +1,6 @@
 <?php
 
-class Project extends\Phalcon\Mvc\Model
+class Project extends BaseModel
 {
 	
 }

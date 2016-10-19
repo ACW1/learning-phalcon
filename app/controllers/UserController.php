@@ -27,14 +27,13 @@ class UserController extends \Phalcon\Mvc\Controller
 
 	public function updateAction() 
 	{
-		$user = User::findFirstById(1);
+		$user = User::findFirstById(8);
 		if (!$user) {
 			echo "User does not exist";
 			die;
 		}
 
 		$user->email = "updated@test.com";
-		$user->updated_at = date("Y-m-d H:i:s");
 		$result = $user->update();
 		if (!$result) {
 			print_r($user->getMessages());

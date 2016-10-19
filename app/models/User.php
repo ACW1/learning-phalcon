@@ -2,9 +2,8 @@
 
 use \Phalcon\Mvc\Model\Behavior\SoftDelete;
 
-class User extends\Phalcon\Mvc\Model
+class User extends BaseModel
 {
-
 	public function initialize()
 	{
 		$this->addBehavior(new SoftDelete([
@@ -12,5 +11,5 @@ class User extends\Phalcon\Mvc\Model
 			'value' => 1
 		]));
 	}
-	
+
 }
