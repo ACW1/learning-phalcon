@@ -6,7 +6,10 @@ class UserController extends \Phalcon\Mvc\Controller
 	{
 		$this->view->setVars([
 			'single' => User::findFirstById(1),
-			'all' => User::find()
+			'all' => User::find([
+				// Toont alleen de gebruikers die niet gedelete zijn 
+				'deleted is NULL'
+				])
 			]);
 	}
 
@@ -33,6 +36,19 @@ class UserController extends \Phalcon\Mvc\Controller
 		$user->email = "updated@test.com";
 		$user->updated_at = date("Y-m-d H:i:s");
 		$result = $user->update();
+		if (!$result) {
+			print_r($user->getMessages());
+		}
+	}
+
+	public function deleteAction()
+	{
+		$user = User::findFirstById(4);
+		if (!$user) {
+			echo "User does not exist";
+			die;
+		}
+		$result = $user->delete();
 		if (!$result) {
 			print_r($user->getMessages());
 		}
