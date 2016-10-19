@@ -25,6 +25,15 @@ class UserController extends \Phalcon\Mvc\Controller
 		}
 	}
 
+	public function createAssocAction()
+	{
+		$user = User::findFirst(1);
+		$project = new Project();
+		$project->user = $user;
+		$project->title = "Moonwalker";
+		$result = $project->save();
+	}
+
 	public function updateAction() 
 	{
 		$user = User::findFirstById(8);
