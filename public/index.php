@@ -7,7 +7,8 @@ try {
 	$loader = new \Phalcon\Loader();
 	$loader->registerDirs([
 		'../app/controllers/',
-		'../app/models/'
+		'../app/models/',
+		'../app/config/'
 		]);
 		$loader->register();
 
@@ -33,6 +34,13 @@ try {
 				".volt" => 'Phalcon\Mvc\View\Engine\Volt'
 				]);
 			return $view;
+		});
+
+		// Router
+		$di->set('router', function() {
+			$router = new \Phalcon\Mvc\Router();
+			$router->mount(new GlobalRoutes());
+			return $router;
 		});
 
 		// Session
