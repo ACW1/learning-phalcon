@@ -1,16 +1,16 @@
 <?php
 
-class LoginController extends \Phalcon\Mvc\Controller
+class LoginController extends BaseController
 {
-	public function initialize()
-	{
-		// echo "**INIT**";
-		$this->view->setTemplateAfter('default');
-	}
+	// public function initialize()
+	// {
+	// 	echo "**INIT**";
+	// 	$this->view->setTemplateAfter('index');
+	// }
 
 	public function indexAction()
 	{
-		echo "Login!";
+		// echo "Login!";
 	}
 
 	// /login/process/<naam>/<leeftijd>
