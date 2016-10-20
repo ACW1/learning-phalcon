@@ -32,6 +32,19 @@ try {
 			return $view;
 		});
 
+		// Session
+		$di->setShared('session', function() {
+			$session = new \Phalcon\Session\Adapter\Files();
+			$session->start();
+			return $session;
+		});
+
+		// Locates the service for the first time
+		// $session = $di->get('session');
+
+		// Returns the first instantiated object
+		// $session = $di->getSession();
+		
 		// Meta-Data
 		$di["modelsMetadata"] = function () {
     	// Instantiate a metadata adapter
