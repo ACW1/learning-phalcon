@@ -1,5 +1,13 @@
 <h1>User</h1>
 
+{{ form('user/login') }}
+	Username: {{ textfield('username') }}
+	Password: {{ password_field('password') }}
+	{{ submit_button('login') }}
+
+
+<h2>List</h2>
+
 {% if single %}
 
 	{{ single.id }}

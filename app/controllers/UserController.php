@@ -13,6 +13,24 @@ class UserController extends BaseController
 			]);
 	}
 
+	public function loginAction()
+	{
+		// print_r($this->request->get()); // $_REQUEST
+
+		// tussen haakjes stringname, string|array filters, default value
+		// echo $this->request->getQuery('demo', false, 'pig'); // $_GET
+		// $post = $this->request->getPost(); // $_POST
+		// print_r($post);
+
+		// checkers
+		// echo $this->request->hasPost('username');
+		// echo $this->request->hasQuery('demo');
+		// $this->request->hasServer();
+
+		
+
+	}
+
 	public function createAction() 
 	{
 		$user = new User();
