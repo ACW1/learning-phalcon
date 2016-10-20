@@ -1,5 +1,7 @@
 <?php 
 
+// Bootstrap file
+
 try {
 	// Autoloader
 	$loader = new \Phalcon\Loader();
@@ -29,6 +31,22 @@ try {
 			$view->setViewsDir('../app/views/');
 			return $view;
 		});
+
+		// Meta-Data
+		$di["modelsMetadata"] = function () {
+    	// Instantiate a metadata adapter
+    	$metadata = new \Phalcon\Mvc\Model\Metadata\Apc(array(
+            "lifetime" => 86400,
+            "prefix"   => "metaData",
+    	));
+
+    	// Set a custom metadata database introspection
+    	// $metadata->setStrategy(
+     //    new StrategyAnnotations()
+    	// );
+
+    	return $metadata;
+		};
 
 		// Deploy the App
 		$app = new \Phalcon\Mvc\Application($di);
