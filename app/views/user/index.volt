@@ -1,16 +1,17 @@
 <h1>User</h1>
 
-<?php if (property_exists($single, 'id')): ?>
-	<?=$single->id?>
-	<?=$single->email?>
+{% if single %}
+
+	{{ single.id }}
+	{{ single.email }}
 
 	<hr />
-    <?php 
-    	
-    $first = $single->project->getFirst()->toArray();
-    print_r($first);
 
-    ?>
+	{% set first=single.project.getFirst().toArray() %}
+	{{ first['id'] }}
+
+{% endif %}
+
     <hr />
 
 	<?php foreach($single->project as $p): ?>
@@ -18,16 +19,12 @@
 	  <?=$p->title?>
 	<?php endforeach;?>
 
-<?php endif;?>
-
 <hr />
 
-<?php 
-$first = $all->getFirst()->toArray();
-print_r($first);
- ?>
-
-<?php foreach($all as $user): ?>
-	<?=$user->id?>
-	<?=$user->email?>
-<?php endforeach;?>
+<h1>All Users</h1>
+{% for key, user in all %}
+	{{ key }}
+	{{ user.id }}
+	{{ user.email }}
+	<br />
+{% endfor %}
