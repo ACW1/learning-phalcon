@@ -15,7 +15,7 @@ class SigninController extends BaseController
 		Tag::setTitle(' Signin');
 		$this->assets->collection('additional')->addCss('css/signin.css');
 		parent::initialize();
-		// echo "Login!";
+		// $this->session->set('role','admin');
 	}
 
 	// /login/process/<naam>/<leeftijd>
