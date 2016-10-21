@@ -7,7 +7,7 @@ a:5:{i:0;s:256:"<!doctype html>
 	<?= $this->assets->outputCss('style') ?>
 	<?= $this->assets->outputJs('js') ?>
 	";s:4:"head";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:3:"
-	";s:4:"file";s:32:"../app/views/templates/base.volt";s:4:"line";i:10;}}i:1;s:1677:"
+	";s:4:"file";s:32:"../app/views/templates/base.volt";s:4:"line";i:10;}}i:1;s:1710:"
 </head>
 <body>
 
@@ -48,9 +48,11 @@ a:5:{i:0;s:256:"<!doctype html>
 	</div>
 </div>
 
+<?= $this->flash->output() ?>
+
 ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:4:"
 
-";s:4:"file";s:32:"../app/views/templates/base.volt";s:4:"line";i:53;}}i:2;s:20:"
+";s:4:"file";s:32:"../app/views/templates/base.volt";s:4:"line";i:55;}}i:2;s:20:"
 
 </body>
 </html>";}

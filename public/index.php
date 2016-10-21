@@ -50,6 +50,17 @@ try {
 			return $session;
 		});
 
+		// Flash data (Temporary data)
+		$di->set('flash', function() {
+			$flash = new \Phalcon\Flash\Session([
+				'error' => 'alert alert-danger',
+				'success' => 'alert alert-success',
+				'notice' => 'alert alert-info',
+				'warning' => 'alert alert-warning'
+				]);
+			return $flash;
+		});
+
 		// Locates the service for the first time
 		// $session = $di->get('session');
 
