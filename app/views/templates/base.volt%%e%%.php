@@ -7,7 +7,7 @@ a:5:{i:0;s:256:"<!doctype html>
 	<?= $this->assets->outputCss('style') ?>
 	<?= $this->assets->outputJs('js') ?>
 	";s:4:"head";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:3:"
-	";s:4:"file";s:32:"../app/views/templates/base.volt";s:4:"line";i:10;}}i:1;s:1710:"
+	";s:4:"file";s:32:"../app/views/templates/base.volt";s:4:"line";i:10;}}i:1;s:1744:"
 </head>
 <body>
 
@@ -41,7 +41,7 @@ a:5:{i:0;s:256:"<!doctype html>
               </li>
            	</ul>
            	<ul class="nav navbar-nav navbar-right">
-           		<li><a href=#>Signin</a></li>
+           		<li><a href="<?= $this->url->get('signin/') ?>">Signin</a></li>
            	</ul>
 		  </div>
 		
