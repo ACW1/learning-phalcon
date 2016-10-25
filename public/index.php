@@ -2,6 +2,8 @@
 
 // Bootstrap file
 
+require '../app/config/Config.php';
+
 try {
 	// Autoloader
 	$loader = new \Phalcon\Loader();
@@ -15,14 +17,20 @@ try {
 		// Dependency Injection
 		$di = new \Phalcon\DI\FactoryDefault();
 
+		// Return Config config
+		$di->setShared('config', function () use ($config) {
+			return $config;
+		});
+
+		// Return API config
+		$di->setShared('api', function () use ($api) {
+			return $api;
+		});
+
 		// Database
-		$di->set('db', function() {
-			$db = new \Phalcon\Db\Adapter\Pdo\Mysql([
-				'host' => 'localhost',
-				'username' => 'root',
-				'password' => '',
-				'dbname' => 'learning-phalcon'
-			]);
+		$di->set('db', function() use ($di) {
+			$dbConfig = (array) $di->get('config')->get('db');
+			$db = new \Phalcon\Db\Adapter\Pdo\Mysql($dbConfig);
 			return $db;
 		});	
 

@@ -11,6 +11,7 @@ class DashboardController extends BaseController
 	
 	public function indexAction()
 	{
+
 		Tag::setTitle(' Dashboard');
 	}
 }
