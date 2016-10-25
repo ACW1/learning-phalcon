@@ -10,6 +10,14 @@ class IndexController extends BaseController
 		parent::initialize();
 	}
 
+	public function signoutAction()
+	{
+		$this->session->destroy();
+		$this->response->redirect('index.php?_url=/index');
+	}
+
+	// Temporary Data below
+	// -------------------------------------
 	public function startSessionAction()
 	{
 		// $this->session->set('name', 'Arthur');

@@ -33,6 +33,7 @@ class SigninController extends BaseController
 		if ($user) {
 			$this->session->set('id', $user->id);
 			$this->session->set('role', $user->role);
+			$this->response->redirect("dashboard/index");
 			return;
 		}	
 

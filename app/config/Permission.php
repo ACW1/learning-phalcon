@@ -28,6 +28,8 @@ class Permission extends \Phalcon\Mvc\User\Plugin
     // Event interruptor
     public function beforeExecuteRoute(Event $event, Dispatcher $dispatcher)
     {
+        // Debug:
+        // $this->session->destroy();
         
         $role = $this->session->get('role');
         // var_dump($role);
