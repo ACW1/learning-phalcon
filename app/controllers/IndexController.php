@@ -18,6 +18,11 @@ class IndexController extends BaseController
 
 	// Temporary Data below
 	// -------------------------------------
+
+	public function generatePasswordAction($password)
+	{
+		echo $this->security->hash($password);
+	}
 	public function startSessionAction()
 	{
 		// $this->session->set('name', 'Arthur');
