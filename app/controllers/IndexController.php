@@ -4,10 +4,15 @@ use \Phalcon\Tag;
 
 class IndexController extends BaseController
 {
+
+	public function onConstruct()
+	{
+		parent::initialize();
+	}
+
 	public function indexAction()
 	{
 		Tag::setTitle(' Home');
-		parent::initialize();
 	}
 
 	public function signoutAction()

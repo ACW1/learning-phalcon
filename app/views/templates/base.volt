@@ -42,6 +42,7 @@
            	</ul>
            	<ul class="nav navbar-nav navbar-right">
            		<li><a href="{{ url('signin/')}}">Signin</a></li>
+              <li><a href="{{ url('signin/register')}}">Register</a></li>
            	</ul>
 		  </div>
 		
