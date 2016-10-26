@@ -15,13 +15,6 @@ class SigninController extends BaseController
 		parent::initialize();
 	}
 
-	private function _createUserSession(User $user) 
-	{
-		$this->session->set('id', $user->id);
-		$this->session->set('role', $user->role);
-		$this->response->redirect("dashboard/index");
-	}
-
 	public function indexAction()
 	{
 		Tag::setTitle(' Signin');
@@ -31,15 +24,10 @@ class SigninController extends BaseController
 
 	public function doSigninAction()
 	{
-		if ($this->security->checkToken() == false)
-		{
-			$this->flash->error('Invalid CSRF token.');
-			$this->response->redirect("signin/index");
-			return;
-		}
-
 		$this->view->disable();
-
+		// csrf-helper aanroepen
+		$this->component->helper->csrf("signin/index");
+		
 		$email    = $this->request->getPost("email");
         $password = $this->request->getPost("password");
 
@@ -48,7 +36,8 @@ class SigninController extends BaseController
             if ($this->security->checkHash($password, $user->password)) 
             {
                 // The password is valid
-                $this->_createUserSession($user);
+                $this->component->user->createSession($user);
+                $this->response->redirect("dashboard/index");
 				return;
             } 
         }

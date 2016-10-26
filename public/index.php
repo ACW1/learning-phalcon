@@ -12,6 +12,18 @@ try {
 		'../app/models/',
 		'../app/config/'
 		]);
+
+		$loader->registerNamespaces(
+		    [
+		       "Component" => "../app/components/",
+		    ]
+		);
+
+		$loader->registerClasses([
+			"Component/User" => "../app/components/User.php",
+			"Component/Helper" => "../app/components/Helper.php",
+			]);
+
 		$loader->register();
 
 		// Dependency Injection
@@ -57,6 +69,16 @@ try {
 			$session->start();
 			return $session;
 		});
+
+		// Return custom components
+		$di->setShared('component', function() {
+			$obj = new stdClass();
+			$obj->helper = new Component\Helper();
+			$obj->user = new Component\User();
+			return $obj;
+		});
+
+		// $this->component->helper->csrf();
 
 		// Flash data (Temporary data)
 		$di->set('flash', function() {
