@@ -15,7 +15,7 @@ $config = new \Phalcon\Config([
 $api = new \Phalcon\Config([
 	'fb' => [
 		'appId' => '123',
-		'appSecret' => '345'
+		'appSecret' => '123'
 	],
 	'aws' => [
 		'cloudfrontPem' => 'file.pem',

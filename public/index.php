@@ -3,6 +3,7 @@
 // Bootstrap file
 
 require '../app/config/Config.php';
+require '../vendor/autoload.php';
 
 try {
 	// Autoloader

@@ -1,0 +1,6 @@
+{	
+	"require": {
+		"omnipay/omnipay": "~2.0",
+		"facebook/graph-sdk": "^5.4"
+	}
+}

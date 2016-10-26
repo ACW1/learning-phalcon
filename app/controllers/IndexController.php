@@ -13,6 +13,16 @@ class IndexController extends BaseController
 	public function indexAction()
 	{
 		Tag::setTitle(' Home');
+		// $gateway = \Omnipay\Omnipay::create('Stripe');
+		// $gateway->setApiKey('123');
+		// print_r($gateway);
+
+		// $fb = new \Facebook\Facebook([
+		// 	'app_id' => 123,
+  		// 	'app_secret' => 123,
+		// 	]);
+		// 	print_r($fb);
+		// 	die;
 	}
 
 	public function signoutAction()
