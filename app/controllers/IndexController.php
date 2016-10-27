@@ -23,6 +23,7 @@ class IndexController extends BaseController
 		// 	]);
 		// 	print_r($fb);
 		// 	die;
+		// kleine verandering
 	}
 
 	public function signoutAction()
