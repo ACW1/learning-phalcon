@@ -1,6 +1,6 @@
 <?php
 
-use \Phalcon\Tag; // Hoofdstuk 9.4 -- makkie
+use \Phalcon\Tag; // Hoofdstuk 10 -- it's a wrap!
 
 class AdminController extends BaseController
 {
